@@ -17,10 +17,13 @@ const HomePage = ({ data }: Data) => {
   const story = data.storyblokEntry;
   console.log(data);
 
+  const [name, setName] = React.useState("");
+
   const content = JSON.parse(story.content);
   console.log("content", content);
   return (
     <div>
+      <input onChange={(e) => setName(e.target.value)} />
       HomePage got it {story.name} {content.title}
     </div>
   );
